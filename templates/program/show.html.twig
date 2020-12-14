@@ -11,12 +11,27 @@
             <p>Catégorie : {{ program.categoryId.name }}</p>
             {% for season in seasons %}
                         <span><a href="{{ path('program_season_show', {programId: program.id, seasonId: season.id}) }}">|SAISON {{ season.id }}|</a> </span>
-                
+
             {% else %}
                 Aucune saison disponible
             {% endfor %}
         </div>
     </div>
+    <strong>Acteurs :</strong>
+
+    <ul>
+
+        {% for actor in program.actors %}
+
+            <li>{{ actor.name }} </li>
+
+        {% else %}
+
+            <li>Aucun acteur pour cette série</li>
+
+        {% endfor %}
+
+    </ul>
 
 
 
